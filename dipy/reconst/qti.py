@@ -3,6 +3,10 @@ trajectory imaging (QTI) by Westin et al. as presented in “Q-space trajectory
 imaging for multidimensional diffusion MRI of the human brain” NeuroImage vol.
 135 (2016): 345-62. https://doi.org/10.1016/j.neuroimage.2016.02.039"""
 
+'''
+small change
+'''
+
 from warnings import warn
 
 import numpy as np
