@@ -584,6 +584,7 @@ class QtiModel(ReconstModel):
             Must be one of the followng:
             'OLS' for ordinary least squares
             'WLS' for weighted least squares
+            'SDPdc' for QTI+: SDPdc
 
         References
         ----------
@@ -605,10 +606,10 @@ class QtiModel(ReconstModel):
                 'tensor to be estimated (rank(X.T @ X) = %s < 28).' % rank
             )
 
-        if fit_method != 'OLS' and fit_method != 'WLS':
+        if fit_method != 'OLS' and fit_method != 'WLS' and fit_method != 'SDPdc':
             raise ValueError(
                 'Invalid value (%s) for \'fit_method\'.' % fit_method
-                + ' Options: \'OLS\', \'WLS\'.'
+                + ' Options: \'OLS\', \'WLS\', \'SDPdc\'.'
             )
         self.fit_method = fit_method
 
