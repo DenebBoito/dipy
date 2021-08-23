@@ -279,7 +279,7 @@ def _qti_gtab():
     return gtab
 
 
-def test_ls_fits():
+def test_fits():
     """Test ordinary and weighted least squares QTI fits by comparing the
     estimated parameters to the ground-truth values."""
     gtab = _qti_gtab()
@@ -299,6 +299,8 @@ def test_ls_fits():
         mask = np.ones(1).astype(bool)
         npt.assert_almost_equal(qti._ols_fit(data, mask, X), params)
         npt.assert_almost_equal(qti._wls_fit(data, mask, X), params)
+        if have_cvxpy:
+            npt.assert_almost_equal(qti._sdpdc_fit(data, mask, X), params)
     return
 
 
