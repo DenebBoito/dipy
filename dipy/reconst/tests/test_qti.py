@@ -280,7 +280,7 @@ def _qti_gtab():
 
 
 def test_fits():
-    """Test ordinary and weighted least squares QTI fits by comparing the
+    """Test ordinary, weighted least squares, and SDPdc QTI fits by comparing the
     estimated parameters to the ground-truth values."""
     gtab = _qti_gtab()
     X = qti.design_matrix(gtab.btens)
